@@ -26,6 +26,7 @@ def load_data():
         # Convert datatyes
         data['price'] = data['price'].astype('float')
         data['model_year'] = data['model_year'].astype('Int64').astype(object)
+        data['days_listed'] = data['days_listed'].astype('Int32')
         # data['cylinders'] = data['cylinders'].astype(object)
 
         return data
@@ -125,9 +126,6 @@ def make_parallel_coords(data, make):
         #     coloraxis_showscale=False  # Hide the color scale
         # )
         st.plotly_chart(fig, use_container_width=True)
-
-        #
-
 
 
     except Exception as e:
