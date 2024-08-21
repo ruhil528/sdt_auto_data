@@ -26,7 +26,7 @@ def load_data():
         # Convert datatyes
         data['price'] = data['price'].astype('float')
         data['model_year'] = data['model_year'].astype('Int64').astype(object)
-        data['days_listed'] = data['days_listed'].astype('Int32')
+        data['days_listed'] = data['days_listed'].fillna(0).astype('int64')
         # data['cylinders'] = data['cylinders'].astype(object)
 
         return data
